@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hybrid Visual Resume: Ajayghosh P</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+                max-width: 450px;
+            }
+        }
+        .kpi-card {
+            background-color: #00A8E8;
+            color: white;
+        }
+        .brand-text-dark { color: #003459; }
+        .brand-text-medium { color: #007EA7; }
+        .brand-text-light { color: #00A8E8; }
+        .brand-bg-dark { background-color: #003459; }
+        .brand-bg-medium { background-color: #007EA7; }
+        .brand-bg-light { background-color: #00A8E8; }
+        .brand-border-light { border-color: #00A8E8; }
+        .path-arrow {
+            width: 0;
+            height: 0;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-top: 20px solid #007EA7;
+            /* Arrow color */
+            margin: 10px auto;
+            transform: rotate(0deg);
+            /* Default for vertical */
+        }
+        .path-arrow.horizontal {
+            border-top: none;
+            border-bottom: 10px solid transparent;
+            border-right: 20px solid #007EA7; /* Arrow color */
+            border-left: 10px solid transparent;
+            margin: 0 10px;
+            transform: rotate(-90deg); /* Rotate for horizontal */
+        }
+    </style>
+</head>
+<body class="antialiased text-gray-800">
+
+    <div class="min-h-screen container mx-auto px-4 py-8 md:py-12">
+        <header class="text-center mb-12 md:mb-16">
+            <h1 class="text-4xl md:text-6xl font-black brand-text-dark mb-2">AJAYGHOSH P</h1>
+            <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">Cost and Management Accountant</p>
+        </header>
+
+        <main>
+            <section id="professional-summary" class="mb-16">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl font-bold brand-text-dark">Professional Summary</h2>
+                    <p class="text-md text-gray-500 mt-1">My career objective and core passions in the financial sector.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md flex flex-col md:flex-row items-center md:items-start text-center md:text-left md:space-x-8">
+                    <img 
+  src="https://github.com/G-257.png?size=128" 
+  alt="Ajayghosh P" 
+  class="w-32 h-32 rounded-full mb-6 md:mb-0 flex-shrink-0 object-cover border-4 border-blue-200"
+  onerror="this.onerror=null;this.src='https://placehold.co/128x128/cccccc/333333?text=Profile';">
+                    <div class="md:flex-1"> <p class="text-xl md:text-2xl font-semibold text-gray-700">CMA-qualified professional with 2+ years of experience in financial compliance and regulatory reporting, seeking to leverage strong analytical and financial modeling skills as a Financial Analyst at Precise. Proven in delivering financial insights and passionate about driving innovation in Fin-tech and private markets. Proficient in Excel and financial systems.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="contact-info" class="mb-16 bg-white p-6 md:p-8 rounded-lg shadow-md">
+                <h3 class="text-xl font-bold brand-text-medium mb-4">Contact Information</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <div class="flex items-center p-4 rounded-lg shadow-sm border border-gray-200">
+                        <span class="text-3xl mr-3">🏠</span> 
+                        <p class="text-gray-700">Malappuram, Kerala, India</p>
+                    </div>
+                    <div class="flex items-center p-4 rounded-lg shadow-sm border border-gray-200">
+                        <span class="text-3xl mr-3">📞</span> 
+                        <p class="text-gray-700">+91 81295 65974</p>
+                    </div>
+                    <div class="flex items-center p-4 rounded-lg shadow-sm border border-gray-200">
+                        <span class="text-3xl mr-3">📧</span> 
+                        <p class="text-gray-700">ajaygaju257@gmail.com</p>
+                    </div>
+                    <div class="flex items-center p-4 rounded-lg shadow-sm border border-gray-200">
+                        <span class="text-3xl mr-3">🔗</span> 
+                        <p class="text-gray-700"><a href="https://linkedin.com/in/ajay-ghosh257" target="_blank" class="text-blue-600 hover:underline">LinkedIn Profile</a></p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="skills" class="mb-16 bg-white p-6 md:p-8 rounded-lg shadow-md">
+                <h3 class="text-xl font-bold brand-text-medium mb-4">Skills</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                    <div class="flex items-center p-4 rounded-lg shadow-sm border border-gray-200 bg-blue-50/50">
+                        <span class="text-3xl brand-text-dark mr-3">📊</span> 
+                        <p class="font-semibold text-gray-700">Financial Modeling</p>
+                    </div>
+                    <div class="flex items-center p-4 rounded-lg shadow-sm border border-gray-200 bg-blue-50/50">
+                        <span class="text-3xl brand-text-medium mr-3">📈</span> 
+                        <p class="font-semibold text-gray-700">Valuation Methodologies</p>
+                    </div>
+                    <div class="flex items-center p-4 rounded-lg shadow-sm border border-gray-200 bg-blue-50/50">
+                        <span class="text-3xl brand-text-light mr-3">💻</span> 
+                        <p class="font-semibold text-gray-700">Microsoft Excel (Advanced)</p>
+                    </div>
+                    <div class="flex items-center p-4 rounded-lg shadow-sm border border-gray-200 bg-blue-50/50">
+                        <span class="text-3xl brand-text-dark mr-3">📈</span> 
+                        <p class="font-semibold text-gray-700">Financial Analysis & Reporting</p>
+                    </div>
+                    <div class="flex items-center p-4 rounded-lg shadow-sm border border-gray-200 bg-blue-50/50">
+                        <span class="text-3xl brand-text-medium mr-3">🧠</span> 
+                        <p class="font-semibold text-gray-700">Analytical Thinking</p>
+                    </div>
+                    <div class="flex items-center p-4 rounded-lg shadow-sm border border-gray-200 bg-blue-50/50">
+                        <span class="text-3xl brand-text-light mr-3">🔒</span> 
+                        <p class="font-semibold text-gray-700">Internal Controls</p>
+                    </div>
+                    <div class="flex items-center p-4 rounded-lg shadow-sm border border-gray-200 bg-blue-50/50">
+                        <span class="text-3xl brand-text-dark mr-3">💸</span> 
+                        <p class="font-semibold text-gray-700">Cash Flow Management</p>
+                    </div>
+                    <div class="flex items-center p-4 rounded-lg shadow-sm border border-gray-200 bg-blue-50/50">
+                        <span class="text-3xl brand-text-medium mr-3">💬</span> 
+                        <p class="font-semibold text-gray-700">Communication</p>
+                    </div>
+                    <div class="flex items-center p-4 rounded-lg shadow-sm border border-gray-200 bg-blue-50/50">
+                        <span class="text-3xl brand-text-light mr-3">🤝</span> 
+                        <p class="font-semibold text-gray-700">Collaboration & Teamwork</p>
+                    </div>
+                    <div class="flex items-center p-4 rounded-lg shadow-sm border border-gray-200 bg-blue-50/50">
+                        <span class="text-3xl brand-text-dark mr-3">🔄</span> 
+                        <p class="font-semibold text-gray-700">Adaptability</p>
+                    </div>
+                </div>
+            </section>
+
+
+            <section id="work-experience-summary" class="mb-16 bg-white p-6 md:p-8 rounded-lg shadow-md">
+                <h3 class="text-xl font-bold brand-text-medium mb-4">Work Experience</h3>
+                
+                <div class="mb-8">
+                    <div class="flex items-center mb-2">
+                        <span class="text-4xl brand-text-dark mr-3">🏦</span> <h4 class="text-2xl font-semibold brand-text-dark">Senior Manager – Compliance – Manappuram Finance Limited</h4>
+                    </div>
+                    <p class="text-gray-600 mb-2">Kerala, India | August 2023 – August 2024</p>
+                    <p class="text-gray-700 mb-4">
+                        Oversaw financial compliance and reporting for e-wallet and international money transfer segments, managing over INR 100 Crores monthly. Successfully led the migration to new online reporting models for CTRs and STRs, and trained employees on new procedures. Collaborated cross-functionally to evaluate regulatory impacts, directly reducing monthly CTR filings. Contributed to strategic decisions, including establishing a new KYC compliance team to address stringent RBI regulations. Conducted technical assessments of financial policies, identifying process improvements for operational efficiency.
+                    </p>
+                    <p class="text-sm text-gray-500 italic">For detailed responsibilities, please refer to the "In-Depth Work Experience Details" section at the bottom.</p>
+                </div>
+
+
+                <div>
+                    <div class="flex items-center mb-2">
+                        <span class="text-4xl brand-text-medium mr-3">🏭</span> <h4 class="text-2xl font-semibold brand-text-dark">CMA Trainee – Uduma Textile Mills, Kerala State Textile Corporation Ltd</h4>
+                    </div>
+                    <p class="text-gray-600 mb-2">Kerala, India | April 2021 – May 2022</p>
+                    <p class="text-gray-700 mb-4">
+                        Maintained books of accounts, handled petty cash, and processed payments. Assisted in preparing weekly working capital, cash flow, and performance reports. Independently managed GST filings (GSTR-1, 2B, 3B) and reconciled credits, ensuring compliance. Generated E-invoices and E-way bills for purchases and sales. Ensured payroll compliance with EPF/ESI laws and supported internal audits.
+                    </p>
+                    <p class="text-sm text-gray-500 italic">For detailed responsibilities, please refer to the "In-Depth Work Experience Details" section at the bottom.</p>
+                </div>
+            </section>
+
+
+            <section id="certifications" class="mb-16 bg-white p-6 md:p-8 rounded-lg shadow-md">
+                <h3 class="text-xl font-bold brand-text-medium mb-4 text-center">Certifications & Workshops</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 text-center">
+                    <div class="flex flex-col items-center p-4 rounded-lg shadow-sm border border-gray-200 bg-blue-50/50">
+                        <span class="text-4xl brand-text-dark mb-2">🏆</span>
+                        <p class="font-semibold text-gray-700">Power BI Workshop</p>
+                        <p class="text-sm text-gray-500">Certificate of Completion - Office Master</p>
+                    </div>
+                    <div class="flex flex-col items-center p-4 rounded-lg shadow-sm border border-gray-200 bg-blue-50/50">
+                        <span class="text-4xl brand-text-medium mb-2">🤖</span>
+                        <p class="font-semibold text-gray-700">Elements of AI</p>
+                        <p class="text-sm text-gray-500">Introduction to AI – University of Helsinki</p>
+                    </div>
+                    <div class="flex flex-col items-center p-4 rounded-lg shadow-sm border border-gray-200 bg-blue-50/50">
+                        <span class="text-4xl brand-text-light mb-2">🎓</span>
+                        <p class="font-semibold text-gray-700">Pre-Placement Orientation</p>
+                        <p class="text-sm text-gray-500">Programme – ICMAI</p>
+                    </div>
+                    <div class="flex flex-col items-center p-4 rounded-lg shadow-sm border border-gray-200 bg-blue-50/50">
+                        <span class="text-4xl brand-text-dark mb-2">💻</span>
+                        <p class="font-semibold text-gray-700">Computer Training Programme</p>
+                        <p class="text-sm text-gray-500">ICMAI</p>
+                    </div>
+                     <div class="flex flex-col items-center p-4 rounded-lg shadow-sm border border-gray-200 bg-blue-50/50">
+                        <span class="text-4xl brand-text-medium mb-2">📄</span>
+                        <p class="font-semibold text-gray-700">Introduction to Data Analysis using Microsoft Excel</p>
+                        <p class="text-sm text-gray-500"><a href="https://coursera.org/verify/N4IV4D3N5XSG" target="_blank" class="text-blue-600 hover:underline">Coursera Verified Certificate</a></p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="education" class="mb-16 bg-white p-6 md:p-8 rounded-lg shadow-md">
+                <h3 class="text-xl font-bold brand-text-medium mb-4 text-center">Educational Background</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 text-center mb-8">
+                    <div class="flex flex-col items-center p-4 rounded-lg shadow-sm border border-gray-200 bg-blue-50/50">
+                        <span class="text-4xl brand-text-dark mb-2">🎓</span>
+                        <p class="font-semibold text-gray-700">CMA</p>
+                        <p class="text-sm text-gray-500">Institute of Cost Accountants of India</p>
+                        <p class="text-sm text-gray-600 font-bold mt-1">2022 | 53%</p>
+                    </div>
+                    <div class="flex flex-col items-center p-4 rounded-lg shadow-sm border border-gray-200 bg-blue-50/50">
+                        <span class="text-4xl brand-text-medium mb-2">🏛️</span>
+                        <p class="font-semibold text-gray-700">B.Com</p>
+                        <p class="text-sm text-gray-500">Indira Gandhi National Open University</p>
+                        <p class="text-sm text-gray-600 font-bold mt-1">2022 | 56%</p>
+                    </div>
+                    <div class="flex flex-col items-center p-4 rounded-lg shadow-sm border border-gray-200 bg-blue-50/50">
+                        <span class="text-4xl brand-text-light mb-2">📚</span>
+                        <p class="font-semibold text-gray-700">Class XII</p>
+                        <p class="text-sm text-gray-500">Higher Secondary Education Board Kerala</p>
+                        <p class="text-sm text-gray-600 font-bold mt-1">2017 | 78%</p>
+                    </div>
+                    <div class="flex flex-col items-center p-4 rounded-lg shadow-sm border border-gray-200 bg-blue-50/50">
+                        <span class="text-4xl brand-text-dark mb-2">🏫</span>
+                        <p class="font-semibold text-gray-700">Class X</p>
+                        <p class="text-sm text-gray-500">Board of Public Examinations Kerala</p>
+                        <p class="text-sm text-gray-600 font-bold mt-1">2015 | 93%</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="visual-insights-section" class="pt-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold brand-text-dark">Visual Insights & Strategic Goals</h2>
+                    <p class="text-md text-gray-500 mt-1">An in-depth, visual exploration of my key competencies, achievements, and future aspirations.</p>
+                </div>
+            </section>
+
+            <section id="professional-profile-snapshot" class="mb-16">
+                <div class="text-center mb-8">
+                     <h2 class="text-3xl font-bold brand-text-dark">Professional Profile Snapshot</h2>
+                     <p class="text-md text-gray-500 mt-1">Key qualifications and career highlights at a glance.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <p class="text-6xl font-extrabold brand-text-light">2+</p>
+                        <p class="text-lg font-semibold text-gray-700 mt-2">Years of Experience</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <p class="text-6xl font-extrabold brand-text-light">CMA</p>
+                        <p class="text-lg font-semibold text-gray-700 mt-2">Qualified Professional</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <p class="text-6xl font-extrabold brand-text-light">Fin-Tech</p>
+                        <p class="text-lg font-semibold text-gray-700 mt-2">Driven & passionate</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="visual-skills-radar" class="mb-16">
+                 <div class="text-center mb-8">
+                    <h2 class="text-3xl font-bold brand-text-dark">Key Skills & Competencies: Radar Analysis</h2>
+                     <p class="text-md text-gray-500 mt-1">A multi-dimensional view of my professional proficiencies essential for a Financial Analyst.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                        <div>
+                            <h3 class="text-xl font-bold brand-text-medium mb-4">Skill Proficiency Radar</h3>
+                            <p class="text-gray-600 mb-2">This radar chart visually represents my proficiency across critical competency areas, highlighting a balanced skill set in financial analysis, technical systems, and collaborative management, crucial for high-impact roles.</p>
+                            <p class="text-gray-600">The data indicates a strong foundation in core financial and analytical domains, complemented by solid technical abilities and proven experience in management and cross-functional collaboration, making for a well-rounded professional profile.</p>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="skillsRadarChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="visual-trajectory" class="mb-16">
+                <div class="text-center mb-12">
+                     <h2 class="text-3xl font-bold brand-text-dark">Career & Education Trajectory: Visual Timeline</h2>
+                     <p class="text-md text-gray-500 mt-1">A comprehensive timeline illustrating my professional growth and academic milestones.</p>
+                </div>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-5 gap-8">
+                    <div class="lg:col-span-3 bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-bold brand-text-medium mb-6">Professional Timeline</h3>
+                        <div class="relative border-l-2 border-blue-200 ml-3">
+                            <div class="mb-8 ml-8">
+                                <div class="absolute -left-[1.2rem] mt-1.5 w-8 h-8 rounded-full brand-bg-dark border-4 border-white"></div>
+                                <time class="mb-1 text-sm font-normal leading-none text-gray-500">Aug 2023 – Aug 2024</time>
+                                <h4 class="text-lg font-semibold brand-text-dark">Senior Manager – Compliance</h4>
+                                <p class="text-md font-normal text-gray-600">Manappuram Finance Limited</p>
+                            </div>
+                            <div class="mb-8 ml-8">
+                                <div class="absolute -left-[1.2rem] mt-1.5 w-8 h-8 rounded-full brand-bg-medium border-4 border-white"></div>
+                                <time class="mb-1 text-sm font-normal leading-none text-gray-500">2022</time>
+                                <h4 class="text-lg font-semibold brand-text-dark">CMA & B.Com Graduation</h4>
+                                <p class="text-md font-normal text-gray-600">Achieved key professional and academic qualifications.</p>
+                            </div>
+                            <div class="ml-8">
+                                <div class="absolute -left-[1.2rem] mt-1.5 w-8 h-8 rounded-full brand-bg-light border-4 border-white"></div>
+                                <time class="mb-1 text-sm font-normal leading-none text-gray-500">Apr 2021 – May 2022</time>
+                                <h4 class="text-lg font-semibold brand-text-dark">CMA Trainee</h4>
+                                <p class="text-md font-normal text-gray-600">Uduma Textile Mills</p>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="lg:col-span-2 bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-bold brand-text-medium mb-4">Academic Progression & Rigor</h3>
+                        <p class="text-gray-600 mb-4">This line chart illustrates my academic progression through different educational milestones. While scores may vary based on the curriculum and rigor of each level, it represents a continuous journey of learning and qualification, culminating in professional certifications.</p>
+                        <div class="chart-container" style="height: 290px;">
+                            <canvas id="educationLineChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="fintech-goal" class="mb-16">
+                <div class="text-center mb-12">
+                     <h2 class="text-3xl font-bold brand-text-dark">📈 Strategic Path to Fin-tech Leadership 🚀</h2>
+                     <p class="text-md text-gray-500 mt-1">Visualizing my unique journey towards innovation and leadership in the Fin-tech sector.</p>
+                </div>
+                <div class="bg-white p-6 md:p-8 rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold brand-text-medium mb-4">Fin-tech Aspiration: Bridging Finance & Technology</h3>
+                    <p class="text-gray-600 mb-6">My trajectory for Fin-tech leadership is built upon a strong foundation of financial acumen, a deep analytical curiosity for digital infrastructure, and a proactive approach to mastering data visualization and AI tools.</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-center mt-8">
+                        
+                        <div class="flex flex-col items-center p-4 rounded-lg border brand-border-light bg-blue-50/50">
+                            <div class="w-16 h-16 rounded-full brand-bg-dark flex items-center justify-center text-white text-3xl font-bold mb-4">📊</div>
+                            <p class="font-semibold text-lg brand-text-dark">Foundational Data & Financial Acumen</p>
+                            <p class="text-sm text-gray-600 mt-1">Leveraging CMA qualification, advanced Excel, and new Power BI skills for robust financial analysis.</p>
+                            <p class="text-sm text-gray-500 italic mt-2">Certificates: Power BI Workshop (June 2025), Data Analysis using Excel (June 2025)</p>
+                        </div>
+                        <div class="flex flex-col items-center justify-center">
+                            <span class="path-arrow"></span>
+                        </div>
+                        <div class="flex flex-col items-center p-4 rounded-lg border brand-border-light bg-blue-50/50">
+                            <div class="w-16 h-16 rounded-full brand-bg-medium flex items-center justify-center text-white text-3xl font-bold mb-4">🌐</div>
+                            <p class="font-semibold text-lg brand-text-dark">Deep Dive into Digital Infrastructure</p>
+                            <p class="text-sm text-gray-600 mt-1">Understanding platforms, cloud architecture, data storage, and code-to-hardware interaction essential for Fin-tech operations.</p>
+                            <p class="text-sm text-gray-500 italic mt-2">Insights from: Cloud & Platform Conversations</p>
+                        </div>
+                        <div class="flex flex-col items-center justify-center">
+                            <span class="path-arrow"></span>
+                        </div>
+                        <div class="flex flex-col items-center p-4 rounded-lg border brand-border-light bg-blue-50/50">
+                            <div class="w-16 h-16 rounded-full brand-bg-light flex items-center justify-center text-white text-3xl font-bold mb-4">💡</div>
+                            <p class="font-semibold text-lg brand-text-dark">Driving Innovation with Analytics & AI</p>
+                            <p class="text-sm text-gray-600 mt-1">Applying analytical thinking and AI principles to deliver strategic financial insights and optimize operations.</p>
+                            <p class="text-sm text-gray-500 italic mt-2">Certificate: Elements of AI (Helsinki)</p>
+                        </div>
+                        <div class="flex flex-col items-center justify-center">
+                            <span class="path-arrow"></span>
+                        </div>
+                        <div class="flex flex-col items-center p-4 rounded-lg border brand-border-light bg-blue-50/50">
+                            <div class="w-16 h-16 rounded-full brand-bg-dark flex items-center justify-center text-white text-3xl font-bold mb-4">🎯</div>
+                            <p class="font-semibold text-lg brand-text-dark">Financial Analyst in Fin-tech & Private Markets</p>
+                            <p class="text-sm text-gray-600 mt-1">Targeting roles that leverage compliance expertise, data analysis, and a forward-looking approach to financial innovation.</p>
+                            <p class="text-sm text-gray-500 italic mt-2">Goal: Financial Analyst at Precise</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="detailed-work-experience" class="mb-16 bg-white p-6 md:p-8 rounded-lg shadow-md">
+                <h2 class="text-3xl font-bold brand-text-dark mb-6 text-center">In-Depth Work Experience Details</h2>
+
+                <div class="mb-8">
+                    <h4 class="text-2xl font-semibold brand-text-dark">Senior Manager – Compliance – Manappuram Finance Limited</h4>
+                    <p class="text-gray-600">Kerala, India | August 2023 – August 2024</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                        <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
+                            <p class="text-gray-700">Prepared and presented monthly performance and compliance efficiency reports to 6 senior leaders, including directors, for two business lines (e-wallet & international money transfers), overseeing approximately 1,100 transactions totaling over INR 100 Crores monthly and ensuring critical surveillance in a highly regulated sector.</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
+                            <p class="text-gray-700">Managed monthly reporting processes for 3 key business metrics (sectoral credit, interest rates, and collection efficiency), encompassing 12 annual submissions per metric, to support leadership submissions and internal performance tracking.</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
+                            <p class="text-gray-700">Led the migration to a new online reporting model for Cash Transaction Reports (CTRs) and Suspicious Transaction Reports (STRs), personally studying and interacting with FIU India. This involved successfully filing an average of 10 CTRs monthly and 16 STRs annually, and training employees across 3 subsidiary companies on the new reporting methods and interface.</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
+                            <p class="text-gray-700">Collaborated with 4+ cross-functional teams to evaluate the financial impact of regulatory shifts, specifically on customer onboarding, loan sanctioning, and data production for reporting. This directly contributed to reducing the number of Cash Transaction Reports (CTRs) from 12 to 10 monthly by optimizing data flows and processes.</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
+                            <p class="text-gray-700">Conducted ongoing compliance analysis for 4 distinct loan products as per RBI Fair Practice Code, involving quarterly analysis of loan dumps for overall limits and sample-based checks of loan documents, ensuring adherence to interest rates, lending limits, charges, and repayment terms.</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
+                            <p class="text-gray-700">Provided critical financial insights and contributed as a key decision-making team member in establishing a new dedicated team for Know Your Customer (KYC) compliance, directly addressing stringent RBI regulations and enhancing the company's strategic approach to financial security.</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
+                            <p class="text-gray-700">Conducted technical assessment of complex internal financial policies and regulatory frameworks, identifying critical process improvements to enhance operational efficiency and ensure strict alignment with organizational and regulatory standards for a specialized financial institution.</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
+                            <p class="text-gray-700">Provided analytical support for CSR activity reviews and committee reporting, ensuring financial allocations aligned with regulatory guidelines and contributing to transparent stakeholder communication in a regulated environment.</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
+                            <p class="text-gray-700">Contributed to the technical revision of Standard Operating Procedures (SOPs) across various departments and branches, meticulously monitoring regulatory compliance to ensure operational adherence to evolving NBFC guidelines.</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
+                            <p class="text-gray-700">Led the technical review and curation of e-learning content for compliance training, and delivered comprehensive onboarding sessions to new employees company-wide. This ensured effective dissemination of complex financial regulations and internal control protocols across the organization.</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
+                            <p class="text-gray-700">Collaborated strategically with audit teams to diagnose and resolve critical process gaps, implementing robust internal financial controls that strengthened data integrity and regulatory adherence within the NBFC's operational framework.</p>
+                        </div>
+                    </div>
+
+                    <section id="visual-impact-manappuram" class="mt-8">
+                         <div class="text-center mb-6">
+                             <h2 class="text-2xl font-bold brand-text-dark">Visualized Impact & Achievements (Manappuram)</h2>
+                         </div>
+                        
+                        <div class="bg-white p-6 md:p-8 rounded-lg shadow-md mb-8 border border-gray-200">
+                             <h3 class="text-xl font-bold brand-text-medium mb-4">Monthly Operational Oversight</h3>
+                             <p class="text-gray-600 mb-6 max-w-4xl mx-auto text-center">As Senior Manager, my responsibilities included overseeing significant monthly transaction volumes and values, requiring meticulous reporting and critical surveillance within a highly regulated sector.</p>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-white text-center">
+                                <div class="brand-bg-dark p-6 rounded-lg">
+                                    <p class="text-5xl font-extrabold">> ₹100 Cr</p>
+                                    <p class="text-lg font-semibold mt-2">Total Monthly Transaction Value</p>
+                                </div>
+                                <div class="brand-bg-medium p-6 rounded-lg">
+                                    <p class="text-5xl font-extrabold">~1,100</p>
+                                    <p class="text-lg font-semibold mt-2">Transactions Overseen Monthly</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+                            <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200">
+                                <h3 class="text-xl font-bold brand-text-medium mb-4">Key Focus Areas: Senior Manager Role</h3>
+                                <p class="text-gray-600 mb-4">This donut chart illustrates the approximate distribution of my focus and effort across primary responsibility areas within the Senior Manager - Compliance role, showcasing a balance between core financial analysis and regulatory adherence.</p>
+                                <div class="chart-container mx-auto">
+                                    <canvas id="focusAreasDonutChart"></canvas>
+                                </div>
+                            </div>
+
+                            <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200">
+                                <h3 class="text-xl font-bold brand-text-medium mb-4">Digital Transformation: Online Reporting & Training</h3>
+                                <p class="text-gray-600 mb-4">Led the overhaul of regulatory reporting systems and comprehensive training programs.</p>
+                                <ul class="list-disc list-inside text-gray-700 space-y-2">
+                                    <li>Successfully migrated <span class="font-bold">regulatory reporting</span> to new online platforms.</li>
+                                    <li>Filed <span class="font-bold">~10 CTRs monthly</span> and <span class="font-bold">~16 STRs annually</span> with FIU India.</li>
+                                    <li>Trained employees across <span class="font-bold">3 subsidiary companies</span> on new reporting methods.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1">
+                            <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200">
+                                <h3 class="text-xl font-bold brand-text-medium mb-4">Strategic Compliance & Internal Controls</h3>
+                                <p class="text-gray-600 mb-4">Contributed to critical strategic initiatives and strengthened internal financial controls.</p>
+                                <ul class="list-disc list-inside text-gray-700 space-y-2">
+                                    <li>Key role in establishing a <span class="font-bold">new KYC compliance team</span>.</li>
+                                    <li>Implemented robust <span class="font-bold">internal financial controls</span>, improving data integrity.</li>
+                                    <li>Collaborated with audit teams to <span class="font-bold">resolve process gaps</span> and enhance regulatory adherence.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                    </div>
+
+                <div class="mb-8">
+                    <h4 class="text-2xl font-semibold brand-text-dark">CMA Trainee – Uduma Textile Mills, Kerala State Textile Corporation Ltd</h4>
+                    <p class="text-gray-600">Kerala, India | April 2021 – May 2022</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                        <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
+                            <p class="font-semibold text-gray-700">Maintained books of accounts, handled petty cash, and processed payments.</p>
+                            <p class="text-gray-600 text-sm mt-1">Managed day-to-day financial transactions, ensuring accurate recording of all inflows and outflows, and efficient handling of liquid funds for operational needs.</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
+                            <p class="font-semibold text-gray-700">Assisted in preparing weekly working capital, cash flow, and performance reports.</p>
+                            <p class="text-gray-600 text-sm mt-1">Supported the finance team by compiling crucial data for regular financial reports, providing insights into the company's liquidity, cash position, and overall operational efficiency.</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
+                            <p class="font-semibold text-gray-700">Supported financial statement preparation by explaining account-level details to the supervisor.</p>
+                            <p class="text-gray-600 text-sm mt-1">Contributed to the accuracy of financial statements by breaking down complex account information, ensuring transparency and aiding the supervisor in final review and approval.</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
+                            <p class="font-semibold text-gray-700">Participated in bank reconciliations and ensured ledger accuracy.</p>
+                            <p class="text-gray-600 text-sm mt-1">Actively engaged in reconciling bank statements with company ledgers, identifying and resolving discrepancies to maintain precise and reliable financial records.</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
+                            <p class="font-semibold text-gray-700">Collected and analyzed financial data with other departments to support internal reporting.</p>
+                            <p class="text-gray-600 text-sm mt-1">Collaborated cross-functionally to gather relevant financial data, synthesizing it to produce comprehensive internal reports that informed management decisions.</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
+                            <p class="font-semibold text-gray-700">Handled creditor payments and salary-related payment processing (including ESI/PF).</p>
+                            <p class="text-gray-600 text-sm mt-1">Managed the timely and accurate processing of payments to vendors and employees, including adherence to statutory deductions like ESI and PF, ensuring smooth operations and compliance.</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
+                            <p class="font-semibold text-gray-700">Independently filed GST returns (GSTR-1, 2B, 3B) and reconciled credits.</p>
+                            <p class="text-gray-600 text-sm mt-1">Took full responsibility for preparing and submitting Goods and Services Tax (GST) returns, including reconciling input tax credits, thereby ensuring tax compliance and optimizing tax liabilities.</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
+                            <p class="font-semibold text-gray-700">Generated E-invoices and E-way bills for purchases and sales.</p>
+                            <p class="text-gray-600 text-sm mt-1">Ensured legal compliance for goods movement and transactions by accurately generating and managing electronic invoices and e-way bills for all purchases and sales activities.</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
+                            <p class="font-semibold text-gray-700">Ensured payroll compliance with EPF/ESI laws and assisted with internal audits.</p>
+                            <p class="text-gray-600 text-sm mt-1">Verified adherence to Employees' Provident Fund (EPF) and Employees' State Insurance (ESI) regulations in payroll processes, and supported internal audit efforts by providing necessary documentation and explanations.</p>
+                        </div>
+                    </div>
+
+
+                    <section id="visual-impact-uduma" class="mt-8">
+                         <div class="text-center mb-6">
+                             <h2 class="text-2xl font-bold brand-text-dark">Visualized Impact & Achievements (Uduma Textile Mills)</h2>
+                         </div>
+                        
+                        <div class="bg-white p-6 md:p-8 rounded-lg shadow-md mb-8 border border-gray-200">
+                             <h3 class="text-xl font-bold brand-text-medium mb-4">Core Financial Operations Managed</h3>
+                             <p class="text-gray-600 mb-6 max-w-4xl mx-auto text-center">As a CMA Trainee, my responsibilities covered fundamental financial operations critical for the smooth functioning of the textile mill.</p>
+                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-white text-center">
+                                <div class="brand-bg-dark p-6 rounded-lg">
+                                    <span class="text-5xl"> ledger</span>
+                                    <p class="text-lg font-semibold mt-2">Books of Accounts</p>
+                                </div>
+                                <div class="brand-bg-medium p-6 rounded-lg">
+                                    <span class="text-5xl">💵</span>
+                                    <p class="text-lg font-semibold mt-2">Petty Cash & Payments</p>
+                                </div>
+                                <div class="brand-bg-light p-6 rounded-lg">
+                                    <span class="text-5xl">🧾</span>
+                                    <p class="text-lg font-semibold mt-2">GST Filings</p>
+                                </div>
+                                <div class="brand-bg-dark p-6 rounded-lg">
+                                    <span class="text-5xl">👨‍ salaries</span>
+                                    <p class="text-lg font-semibold mt-2">Payroll Compliance</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                            <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200">
+                                <h3 class="text-xl font-bold brand-text-medium mb-4">Key Operational Process Flow</h3>
+                                <p class="text-gray-600 mb-4">This diagram illustrates the streamlined process I managed for crucial financial reporting and compliance activities, ensuring accuracy and regulatory adherence.</p>
+                                <div class="space-y-4">
+                                    <div class="flex items-center">
+                                        <span class="flex items-center justify-center w-12 h-12 rounded-full brand-bg-dark text-white font-bold text-xl mr-4">1</span>
+                                        <p class="font-semibold">Initiated: Data collection for financial reports (e.g., cash flow, working capital).</p>
+                                    </div>
+                                    <div class="flex justify-center h-8">
+                                        <div class="w-px bg-gray-300"></div>
+                                        <div class="w-px bg-gray-300"></div>
+                                        <div class="w-px bg-gray-300"></div>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <span class="flex items-center justify-center w-12 h-12 rounded-full brand-bg-medium text-white font-bold text-xl mr-4">2</span>
+                                        <p class="font-semibold">Executed: Independent filing of GST returns (GSTR-1, 2B, 3B) and reconciliation.</p>
+                                    </div>
+                                    <div class="flex justify-center h-8">
+                                        <div class="w-px bg-gray-300"></div>
+                                        <div class="w-px bg-gray-300"></div>
+                                        <div class="w-px bg-gray-300"></div>
+                                    </div>
+                                    <div class="flex items-center">
+                                       <span class="flex items-center justify-center w-12 h-12 rounded-full brand-bg-light text-white font-bold text-xl mr-4">3</span>
+                                       <div>
+                                            <p class="font-semibold">Ensured: Accuracy in bank reconciliations and ledger maintenance.</p>
+                                           <p class="text-sm text-gray-500">Contributed to accurate financial record-keeping.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                             <div class="bg-white p-6 rounded-lg shadow-md flex items-center justify-center border border-gray-200">
+                                <div class="chart-container" style="height: 250px;">
+                                    <canvas id="traineeImpactChart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        const chartColors = {
+            dark: '#003459',
+            medium: '#007EA7',
+            light: '#00A8E8',
+            lightFaded: 'rgba(0, 168, 232, 0.2)',
+            white: '#FFFFFF',
+        };
+
+        function wrapLabel(str, maxLen) {
+            if (str.length <= maxLen) {
+                return str;
+            }
+            const words = str.split(' ');
+            let currentLine = '';
+            const lines = [];
+            for (const word of words) {
+                if ((currentLine + word).length > maxLen) {
+                    lines.push(currentLine.trim());
+                    currentLine = '';
+                }
+                currentLine += word + ' ';
+            }
+            lines.push(currentLine.trim());
+            return lines;
+        }
+
+        const tooltipCallbacks = {
+            plugins: {
+                legend: {
+                    labels: {
+                        color: '#374151'
+                    }
+                },
+                tooltip: {
+                    callbacks: {
+                        title: function(tooltipItems) {
+                            const item = tooltipItems[0];
+                            let label = item.chart.data.labels[item.dataIndex];
+                            if (Array.isArray(label)) {
+                                return label.join(' ');
+                            }
+                            return label;
+                        }
+                    }
+                }
+            }
+        };
+        const ctxRadar = document.getElementById('skillsRadarChart');
+        if (ctxRadar) {
+            new Chart(ctxRadar, {
+                type: 'radar',
+                data: {
+                    labels: [
+                        'Financial Analysis', 'Regulatory Compliance', 'Internal Controls',
+                        'Financial Modeling', 'Microsoft Excel', 'Power BI & AI',
+                        'Team Collaboration', 'Process Improvement'
+                    ],
+                    datasets: [{
+                        label: 'Proficiency',
+                        data: [9, 9, 8, 7, 9, 7, 9, 8],
+                        backgroundColor: chartColors.lightFaded,
+                        borderColor: chartColors.light,
+                        borderWidth: 2,
+                        pointBackgroundColor: chartColors.light,
+                        pointBorderColor: chartColors.white,
+                        pointHoverBackgroundColor: chartColors.white,
+                        pointHoverBorderColor: chartColors.light
+                    }]
+                },
+                options: {
+                    ...tooltipCallbacks,
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        r: {
+                            angleLines: { color: '#e5e7eb' },
+                            grid: { color: '#e5e7eb' },
+                            pointLabels: { 
+                                color: chartColors.dark,
+                                font: {
+                                    size: 12
+                                }
+                            },
+                            ticks: {
+                                color: chartColors.medium,
+                                backdropColor: 'rgba(255, 255, 255, 0.75)',
+                                stepSize: 2
+                            },
+                            suggestedMin: 0,
+                            suggestedMax: 10
+                        }
+                    }
+                }
+            });
+        }
+        
+        const ctxFocusAreas = document.getElementById('focusAreasDonutChart');
+        if(ctxFocusAreas) {
+             new Chart(ctxFocusAreas, {
+                type: 'doughnut',
+                data: {
+                    labels: [
+                        wrapLabel('Compliance & Regulatory Oversight', 16),
+                        wrapLabel('Financial Analysis & Strategic Insights', 16),
+                        wrapLabel('Operational & Internal Control Enhancement', 16)
+                    ],
+                    datasets: [{
+                        data: [45, 30, 25], // Estimated distribution based on detailed work experience
+                        backgroundColor: [chartColors.dark, chartColors.medium, chartColors.light],
+                        hoverOffset: 10,
+                        borderWidth: 2,
+                        borderColor: '#ffffff',
+                    }]
+                },
+                options: {
+                    ...tooltipCallbacks,
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    cutout: '60%', // Creates the donut hole
+                    plugins: {
+                        ...tooltipCallbacks.plugins,
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                color: '#374151',
+                                font: {
+                                    size: 12,
+                                },
+                                boxWidth: 15,
+                            }
+                        }
+                    }
+                }
+            });
+        }
+        
+        const ctxEducation = document.getElementById('educationLineChart');
+        if(ctxEducation) {
+            new Chart(ctxEducation, {
+                type: 'line',
+                data: {
+                    labels: ['2015 (Class X)', '2017 (Class XII)', '2022 (B.Com)', '2022 (CMA)'],
+                    datasets: [{
+                        label: 'Percentage Score',
+                        data: [93, 78, 56, 53],
+                        backgroundColor: chartColors.lightFaded,
+                        borderColor: chartColors.light,
+                        borderWidth: 2,
+                        tension: 0.4,
+                        fill: true,
+                        pointBackgroundColor: chartColors.light,
+                        pointBorderColor: '#ffffff',
+                        pointHoverBackgroundColor: '#ffffff',
+                        pointHoverBorderColor: chartColors.light,
+                        pointRadius: 5,
+                        pointHoverRadius: 7,
+                    }]
+                },
+                options: {
+                    ...tooltipCallbacks,
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 100,
+                            ticks: {
+                                callback: function(value) {
+                                    return value + '%'
+                                }
+                            }
+                        },
+                        x: {
+                            grid: { display: false }
+                        }
+                    },
+                     plugins: {
+                        ...tooltipCallbacks.plugins,
+                        legend: { display: false }
+                    }
+                }
+            });
+        }
+
+        const ctxTraineeImpact = document.getElementById('traineeImpactChart');
+        if(ctxTraineeImpact) {
+            new Chart(ctxTraineeImpact, {
+                type: 'bar',
+                data: {
+                    labels: ['Books of Accounts', 'Petty Cash/Payments', 'GST Filings', 'Payroll Complianace'],
+                    datasets: [{
+                        label: 'Level of Involvement',
+                        data: [9, 8, 9, 8], // Example data: 1-10 scale
+                        backgroundColor: [
+                            chartColors.dark,
+                            chartColors.medium,
+                            chartColors.light,
+                            chartColors.dark
+                        ],
+                        borderColor: [
+                            chartColors.dark,
+                            chartColors.medium,
+                            chartColors.light,
+                            chartColors.dark
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    indexAxis: 'y', // Makes it a horizontal bar chart
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: {
+                            beginAtZero: true,
+                            max: 10,
+                            ticks: {
+                                stepSize: 2
+                            },
+                             grid: { display: false }
+                        },
+                        y: {
+                            grid: { display: false }
+                        }
+                    },
+                    plugins: {
+                        ...tooltipCallbacks.plugins,
+                        legend: { display: false }
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>
